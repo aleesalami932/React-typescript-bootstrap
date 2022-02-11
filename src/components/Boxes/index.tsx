@@ -6,7 +6,6 @@ import {
 } from "../../context/Interfaces";
 
 const Boxes = (props: ILearningMethodePros) => {
-  console.log(props);
   return (
     <section className="p-5">
       <div className="container">
@@ -15,6 +14,7 @@ const Boxes = (props: ILearningMethodePros) => {
             return (
               <div className="col-md">
                 <Card
+                  key={item.methodeId}
                   methodeImg={item.methodeImg}
                   methodeDescription={item.methodeDescription}
                   methodeId={item.methodeId}

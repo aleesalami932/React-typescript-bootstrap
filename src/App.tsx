@@ -4,43 +4,39 @@ import Navbar from "./components/Navbar";
 import Showcase from "./components/Showcase";
 import NewsLetter from "./components/NewsLetter";
 import Boxes from "./components/Boxes";
-import { LearningMethode } from "./context/Interfaces";
-
-let DUMMY_LEARNING_MATIRAL: LearningMethode[];
-
-DUMMY_LEARNING_MATIRAL = [
-  {
-    methodeId: Date.now().toString(),
-    methodeName: "Virtual",
-    methodeImg: "bi bi-laptop",
-    methodeDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatem accusantium perferendis, nostrum vero odio",
-  },
-  {
-    methodeId: Date.now().toString(),
-    methodeName: "Hybrid",
-    methodeImg: "bi bi-person-square",
-    methodeDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatem accusantium perferendis, nostrum vero odio",
-  },
-  {
-    methodeId: Date.now().toString(),
-    methodeName: "In person",
-    methodeImg: "bi bi-people",
-    methodeDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatem accusantium perferendis, nostrum vero odio",
-  },
-];
+import Learn from "./components/Learn";
+import LearReact from "./components/Learn/LearnReact";
+import FAQ from "./components/FAQ/FAQ";
+import {
+  DUMMY_LEARNING_MATIRAL,
+  DUMMY_FAQ,
+  DUMMY_INATRUCTORS,
+  DUMMY_CONTACT,
+} from "../src/context/DummyData";
+import Instructors from "./components/Instructors";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App">
       {/* nav bar not collapsing needs fix */}
       <Navbar />
-      {/* fix img its not working for some weird reason */}
       <Showcase />
       <NewsLetter />
       <Boxes items={DUMMY_LEARNING_MATIRAL} />
+      <Learn />
+      <LearReact />
+      <FAQ items={DUMMY_FAQ} />
+      <Instructors items={DUMMY_INATRUCTORS} />
+      <Contact
+        enrollmentEmail={DUMMY_CONTACT.enrollmentEmail}
+        enrollmentPhone={DUMMY_CONTACT.enrollmentPhone}
+        mainLocation={DUMMY_CONTACT.mainLocation}
+        studentEmail={DUMMY_CONTACT.studentPhone}
+        studentPhone={DUMMY_CONTACT.studentPhone}
+      />
+      <Footer />
     </div>
   );
 }

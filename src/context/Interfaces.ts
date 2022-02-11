@@ -8,10 +8,14 @@ export interface ILearningMethodePros {
   items: LearningMethode[];
 }
 
-export interface Fqa {
-  questionId: string;
-  fqaQuestion: string;
-  fqaAnswer: string;
+export interface Faq {
+  faqId: string;
+  faqQuestion: string;
+  faqAnswer: string;
+}
+
+export interface Faqs {
+  items: Faq[];
 }
 
 export interface InstructorInfo {
@@ -21,10 +25,25 @@ export interface InstructorInfo {
   instructorImg: string;
 }
 
+export interface InstructorsInfo {
+  items: InstructorInfo[];
+}
+
 export interface ContactInfo {
   mainLocation: string;
   enrollmentPhone: string;
   studentPhone: string;
-  EnrollmentEmail: string;
+  enrollmentEmail: string;
   studentEmail: string;
+}
+
+export interface Viewport {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+}
+
+export interface ModalProps {
+  isShown?: boolean;
+  hide?: () => void;
 }
